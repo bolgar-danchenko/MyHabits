@@ -31,9 +31,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         var title: String {
             switch self {
             case .habits:
-                return "Habits"
+                return "Сегодня"
             case .info:
-                return "Info"
+                return "Информация"
             }
         }
             
@@ -41,13 +41,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             switch self {
             case .habits:
                 return UITabBarItem(
-                    title: "Habits",
+                    title: "Привычки",
                     image: UIImage(named: "habits_tab_icon"),
                     tag: 0
                 )
             case .info:
                 return UITabBarItem(
-                    title: "Info",
+                    title: "Информация",
                     image: UIImage(named: "info_tab_icon"),
                     tag: 1)
             }

@@ -7,9 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B5614B9F28AB50B900A4726A /* InfoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5614B9E28AB50B900A4726A /* InfoData.swift */; };
+		B562DBD428AB7CFC00639850 /* AddHabitController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B562DBD328AB7CFC00639850 /* AddHabitController.swift */; };
+		B562DBD628AB810E00639850 /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = B562DBD528AB810E00639850 /* Styles.swift */; };
+		B562DBD828AB81AF00639850 /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B562DBD728AB81AF00639850 /* UIExtensions.swift */; };
+		B562DBDB28AB83E100639850 /* ProgressCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B562DBDA28AB83E100639850 /* ProgressCollectionViewCell.swift */; };
+		B562DBDD28AB87CD00639850 /* HabitCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B562DBDC28AB87CD00639850 /* HabitCollectionViewCell.swift */; };
+		B562DBDF28AB8FF200639850 /* HabitDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B562DBDE28AB8FF200639850 /* HabitDetailsViewController.swift */; };
+		B562DBE128AB911200639850 /* HabitDetailViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B562DBE028AB911200639850 /* HabitDetailViewCell.swift */; };
 		B5B0481628A3335A00331FD9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B0481528A3335A00331FD9 /* AppDelegate.swift */; };
 		B5B0481828A3335A00331FD9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B0481728A3335A00331FD9 /* SceneDelegate.swift */; };
-		B5B0481A28A3335A00331FD9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B0481928A3335A00331FD9 /* ViewController.swift */; };
 		B5B0481F28A3335D00331FD9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5B0481E28A3335D00331FD9 /* Assets.xcassets */; };
 		B5B0482228A3335D00331FD9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5B0482028A3335D00331FD9 /* LaunchScreen.storyboard */; };
 		B5F69D1628A397ED00BCAD01 /* SFProDisplay-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B5F69D1528A397ED00BCAD01 /* SFProDisplay-Regular.ttf */; };
@@ -19,10 +26,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B5614B9E28AB50B900A4726A /* InfoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoData.swift; sourceTree = "<group>"; };
+		B562DBD328AB7CFC00639850 /* AddHabitController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHabitController.swift; sourceTree = "<group>"; };
+		B562DBD528AB810E00639850 /* Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
+		B562DBD728AB81AF00639850 /* UIExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtensions.swift; sourceTree = "<group>"; };
+		B562DBDA28AB83E100639850 /* ProgressCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCollectionViewCell.swift; sourceTree = "<group>"; };
+		B562DBDC28AB87CD00639850 /* HabitCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCollectionViewCell.swift; sourceTree = "<group>"; };
+		B562DBDE28AB8FF200639850 /* HabitDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitDetailsViewController.swift; sourceTree = "<group>"; };
+		B562DBE028AB911200639850 /* HabitDetailViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitDetailViewCell.swift; sourceTree = "<group>"; };
 		B5B0481228A3335A00331FD9 /* MyHabits.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyHabits.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5B0481528A3335A00331FD9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B5B0481728A3335A00331FD9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B5B0481928A3335A00331FD9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B5B0481E28A3335D00331FD9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B5B0482128A3335D00331FD9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B5B0482328A3335D00331FD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -43,6 +57,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B5614B9C28AB504500A4726A /* Info */ = {
+			isa = PBXGroup;
+			children = (
+				B5F69D1C28A39CD400BCAD01 /* InfoViewController.swift */,
+				B5614B9E28AB50B900A4726A /* InfoData.swift */,
+			);
+			path = Info;
+			sourceTree = "<group>";
+		};
+		B5614B9D28AB506E00A4726A /* Habits */ = {
+			isa = PBXGroup;
+			children = (
+				B5F69D1828A39C4D00BCAD01 /* HabitsStore.swift */,
+				B562DBDC28AB87CD00639850 /* HabitCollectionViewCell.swift */,
+				B5F69D1A28A39CB900BCAD01 /* HabitsViewController.swift */,
+				B562DBD328AB7CFC00639850 /* AddHabitController.swift */,
+				B562DBDA28AB83E100639850 /* ProgressCollectionViewCell.swift */,
+				B562DBDE28AB8FF200639850 /* HabitDetailsViewController.swift */,
+				B562DBE028AB911200639850 /* HabitDetailViewCell.swift */,
+			);
+			path = Habits;
+			sourceTree = "<group>";
+		};
+		B562DBD928AB833000639850 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				B562DBD528AB810E00639850 /* Styles.swift */,
+				B562DBD728AB81AF00639850 /* UIExtensions.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
 		B5B0480928A3335A00331FD9 = {
 			isa = PBXGroup;
 			children = (
@@ -64,14 +110,13 @@
 			children = (
 				B5B0481528A3335A00331FD9 /* AppDelegate.swift */,
 				B5B0481728A3335A00331FD9 /* SceneDelegate.swift */,
-				B5B0481928A3335A00331FD9 /* ViewController.swift */,
-				B5F69D1828A39C4D00BCAD01 /* HabitsStore.swift */,
-				B5F69D1A28A39CB900BCAD01 /* HabitsViewController.swift */,
-				B5F69D1C28A39CD400BCAD01 /* InfoViewController.swift */,
-				B5B0481E28A3335D00331FD9 /* Assets.xcassets */,
 				B5B0482028A3335D00331FD9 /* LaunchScreen.storyboard */,
-				B5B0482328A3335D00331FD9 /* Info.plist */,
+				B562DBD928AB833000639850 /* UI */,
+				B5614B9C28AB504500A4726A /* Info */,
+				B5614B9D28AB506E00A4726A /* Habits */,
 				B5F69D1728A397FF00BCAD01 /* fonts */,
+				B5B0481E28A3335D00331FD9 /* Assets.xcassets */,
+				B5B0482328A3335D00331FD9 /* Info.plist */,
 			);
 			path = MyHabits;
 			sourceTree = "<group>";
@@ -156,11 +201,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5F69D1928A39C4D00BCAD01 /* HabitsStore.swift in Sources */,
-				B5B0481A28A3335A00331FD9 /* ViewController.swift in Sources */,
 				B5B0481628A3335A00331FD9 /* AppDelegate.swift in Sources */,
+				B562DBD428AB7CFC00639850 /* AddHabitController.swift in Sources */,
+				B562DBD628AB810E00639850 /* Styles.swift in Sources */,
+				B562DBDF28AB8FF200639850 /* HabitDetailsViewController.swift in Sources */,
+				B562DBDD28AB87CD00639850 /* HabitCollectionViewCell.swift in Sources */,
 				B5F69D1B28A39CB900BCAD01 /* HabitsViewController.swift in Sources */,
+				B5614B9F28AB50B900A4726A /* InfoData.swift in Sources */,
+				B562DBDB28AB83E100639850 /* ProgressCollectionViewCell.swift in Sources */,
 				B5F69D1D28A39CD400BCAD01 /* InfoViewController.swift in Sources */,
+				B562DBD828AB81AF00639850 /* UIExtensions.swift in Sources */,
 				B5B0481828A3335A00331FD9 /* SceneDelegate.swift in Sources */,
+				B562DBE128AB911200639850 /* HabitDetailViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
