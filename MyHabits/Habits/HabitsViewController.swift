@@ -7,11 +7,7 @@
 
 import UIKit
 
-protocol UpdateCollectionProtocol {
-    func onCollectionUpdate()
-}
-
-class HabitsViewController: UIViewController, UpdateCollectionProtocol {
+class HabitsViewController: UIViewController {
     
     // MARK: - DATA
     
@@ -85,17 +81,13 @@ class HabitsViewController: UIViewController, UpdateCollectionProtocol {
         ])
     }
     
-    // MARK: - PUBLIC METHODS
-    
-    func onCollectionUpdate() {
-        habitsCollectionView.reloadData()
-    }
-    
     // MARK: - ACTIONS
     
     @objc func addHabit() {
         let addHabitController = AddHabitController()
-        addHabitController.updateCollectionCallback = self
+        addHabitController.addHabitType = .create(createAction: { [weak self] in
+            self?.habitsCollectionView.reloadData()
+        })
         self.navigationController?.present(addHabitController, animated: true, completion: nil)
     }
 }

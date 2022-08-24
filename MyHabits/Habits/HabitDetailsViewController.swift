@@ -7,11 +7,6 @@
 
 import UIKit
 
-protocol HabitDetailsViewProtocol {
-    func onHabitUpdate(habit: Habit)
-    func onHabitDelete()
-}
-
 class HabitDetailsViewController: UIViewController {
 
     // MARK: - DATA
@@ -23,13 +18,6 @@ class HabitDetailsViewController: UIViewController {
     }()
     
     // MARK: - SUBVIEWS
-    
-    private lazy var imageView: UIImageView? = {
-        let imageView = UIImageView(image: UIImage.init(systemName: "checkmark"))
-        imageView.tintColor = Styles.purpleColor
-        
-        return imageView
-    }()
     
     private lazy var habitTableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .grouped)
@@ -92,28 +80,19 @@ class HabitDetailsViewController: UIViewController {
     @objc func editButtonPressed(_ sender: Any) {
         let viewController = AddHabitController()
         viewController.habit = habit
-        viewController.addHabitType = .edit
+        viewController.addHabitType = .edit(removeAction: { [weak self] in
+            self?.navigationController?.popToRootViewController(animated: true)
+        })
         viewController.nameTextField.text = habit.name
         viewController.colorPickerView.backgroundColor = habit.color
         viewController.datePicker.date = habit.date
         viewController.nameTextField.textColor = habit.color
-        viewController.habitDetailsViewCallback = self
-        navigationController?.present(viewController, animated: true, completion: nil)
+//        viewController.habitDetailsViewCallback = self
+        present(viewController, animated: true, completion: nil)
     }
 }
 
 // MARK: - EXTENSIONS
-
-extension HabitDetailsViewController: HabitDetailsViewProtocol {
-    func onHabitDelete() {
-        navigationController?.popToRootViewController(animated: true)
-    }
-    
-    func onHabitUpdate(habit: Habit) {
-        self.habit = habit
-        navigationItem.title = habit.name
-    }
-}
 
 extension HabitDetailsViewController: UITableViewDelegate {
     //empty
@@ -125,7 +104,7 @@ extension HabitDetailsViewController: UITableViewDataSource {
         _ tableView: UITableView,
         numberOfRowsInSection section: Int
     ) -> Int {
-        return HabitsStore.shared.dates.count
+        return habitDates.count
     }
     
     func tableView(
@@ -142,8 +121,9 @@ extension HabitDetailsViewController: UITableViewDataSource {
             habit,
             isTrackedIn: habitDates[indexPath.row]
         ) {
-            cell.accessoryView = imageView
-            cell.accessoryView?.frame = CGRect(x: 0, y: 0, width: 22, height: 22)
+            cell.accessoryType = .checkmark
+        } else {
+            cell.accessoryType = .none
         }
         return cell
     }

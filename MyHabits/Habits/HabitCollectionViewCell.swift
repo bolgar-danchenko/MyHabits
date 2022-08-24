@@ -7,10 +7,6 @@
 
 import UIKit
 
-protocol HabitTapCallback {
-    func onTap(position: Int)
-}
-
 class HabitCollectionViewCell: UICollectionViewCell {
 
     // MARK: - SETUP

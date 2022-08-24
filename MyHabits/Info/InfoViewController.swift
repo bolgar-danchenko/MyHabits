@@ -140,7 +140,6 @@ class InfoViewController: UIViewController {
         infoStackView.axis = .vertical
         infoStackView.alignment = .leading
         infoStackView.spacing = 12
-//        infoStackView.distribution = .fillProportionally
         
         infoStackView.addArrangedSubview(self.infoText0)
         infoStackView.addArrangedSubview(self.infoText1)
@@ -204,6 +203,5 @@ class InfoViewController: UIViewController {
             infoStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
             infoStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
         ])
-        contentView.subviews.last?.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
     }
 }

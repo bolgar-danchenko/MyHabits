@@ -42,13 +42,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             case .habits:
                 return UITabBarItem(
                     title: "Привычки",
-                    image: UIImage(named: "habits_tab_icon"),
+                    image: UIImage(named: "habitstab"),
                     tag: 0
                 )
             case .info:
                 return UITabBarItem(
                     title: "Информация",
-                    image: UIImage(named: "info_tab_icon"),
+                    image: UIImage(named: "infotab"),
                     tag: 1)
             }
         }

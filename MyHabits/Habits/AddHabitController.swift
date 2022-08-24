@@ -1,15 +1,33 @@
 //
-//  HabitViewController.swift
+//  AddHabitController.swift
 //  MyHabits
 //
-//  Created by Dmitriy Chernov on 13.12.2020.
+//  Created by Konstantin Bolgar-Danchenko on 16.08.2022.
 //
 
 import UIKit
 
 enum AddHabitType {
-    case create
-    case edit
+    case create(createAction: (() -> Void)?)
+    case edit(removeAction: (() -> Void)?)
+    
+    var title: String {
+        switch self {
+        case .create:
+            return "Создать"
+        case .edit:
+            return "Править"
+        }
+    }
+    
+    func callAction() {
+        switch self {
+        case .create(let createAction):
+            createAction?()
+        case .edit(let removeAction):
+            removeAction?()
+        }
+    }
 }
 
 class AddHabitController: UIViewController {
@@ -18,9 +36,7 @@ class AddHabitController: UIViewController {
     
     private let horizontalInset: CGFloat = 16
     private let imageSize: CGFloat = 30
-    var addHabitType = AddHabitType.create
-    var updateCollectionCallback: UpdateCollectionProtocol?
-    var habitDetailsViewCallback: HabitDetailsViewProtocol?
+    var addHabitType = AddHabitType.create(createAction: nil)
     
     // MARK: - DATA
     
@@ -44,10 +60,7 @@ class AddHabitController: UIViewController {
         navItem.rightBarButtonItem = rightBarButtonItem
         navItem.leftBarButtonItem = leftBarButtonItem
         
-        switch addHabitType {
-            case .create: navItem.title = "Создать"
-            case .edit: navItem.title = "Править"
-        }
+        navItem.title = addHabitType.title
         
         navBar.setItems([navItem], animated: true)
         navBar.backgroundColor = .systemGray
@@ -193,7 +206,7 @@ class AddHabitController: UIViewController {
         view.addSubview(habitTimeLabelTime)
         view.addSubview(datePicker)
         
-        if addHabitType == .edit {
+        if case .edit = addHabitType {
             self.view.addSubview(self.deleteHabitButton)
             
             let constrForButton = [
@@ -217,10 +230,8 @@ class AddHabitController: UIViewController {
             nameTextField.leadingAnchor.constraint(equalTo: nameLabel.leadingAnchor),
             nameTextField.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16),
             
-            
             colorLabel.topAnchor.constraint(equalTo: nameTextField.bottomAnchor, constant: 15),
             colorLabel.leadingAnchor.constraint(equalTo: nameLabel.leadingAnchor),
-            
             
             colorPickerView.topAnchor.constraint(equalTo: colorLabel.bottomAnchor, constant: 7),
             colorPickerView.leadingAnchor.constraint(equalTo: nameLabel.leadingAnchor),
@@ -244,7 +255,7 @@ class AddHabitController: UIViewController {
     //MARK: - ACTIONS
     
     @objc func datePickerChanged(picker: UIDatePicker) {
-        if addHabitType == .create {
+        if case .create = addHabitType {
             habit.date = datePicker.date
         }
 
@@ -269,7 +280,7 @@ class AddHabitController: UIViewController {
         
         let deleteAction = UIAlertAction(title: "Удалить", style: .destructive) { _ in
             HabitsStore.shared.habits.remove(at: HabitsStore.shared.habits.firstIndex(of: self.habit)! )
-            self.habitDetailsViewCallback?.onHabitDelete()
+            self.addHabitType.callAction()
             self.dismiss(animated: true, completion: nil)
         }
         alertController.addAction(cancelAction)
@@ -288,17 +299,16 @@ class AddHabitController: UIViewController {
         }
         
         switch addHabitType {
-            case .create: do {
+            case .create(let action): do {
                 let store = HabitsStore.shared
                 store.habits.append(habit)
+                action?()
             }
             case .edit: do {
                 habit.date = datePicker.date
             }
         }
         habitStore.save()
-        updateCollectionCallback?.onCollectionUpdate()
-        habitDetailsViewCallback?.onHabitUpdate(habit: habit)
         dismiss(animated: true, completion: nil)
     }
     
