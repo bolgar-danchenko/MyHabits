@@ -22,7 +22,7 @@ class HabitCollectionViewCell: UICollectionViewCell {
     
     private lazy var nameLabel: UILabel = {
         let label = UILabel()
-        label.applyHeadlineStyle()
+        label.applyStyle(color: Styles.blueColor, font: Styles.headlineFont)
         label.numberOfLines = 2
         
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -31,7 +31,7 @@ class HabitCollectionViewCell: UICollectionViewCell {
     
     private lazy var dateLabel: UILabel = {
         let label = UILabel()
-        label.applyFootnoteStyle()
+        label.applyStyle(color: Styles.darkGrayColor, font: Styles.footnoteFont)
         label.textColor = .systemGray
         
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -40,9 +40,9 @@ class HabitCollectionViewCell: UICollectionViewCell {
     
     private lazy var trackerLabel: UILabel = {
         let label = UILabel()
-        label.applyCaptionStyle()
+        label.applyStyle(color: Styles.mediumGrayColor, font: Styles.captionFont)
         label.text = "Счётчик: \(habit.trackDates.count)"
-        label.applyFootnoteStyle()
+        label.applyStyle(color: Styles.darkGrayColor, font: Styles.footnoteFont)
         
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -125,7 +125,7 @@ class HabitCollectionViewCell: UICollectionViewCell {
         nameLabel.textColor = habit.color
         nameLabel.text = habit.name
         dateLabel.text = habit.dateString
-        dateLabel.applyCaptionStyle()
+        dateLabel.applyStyle(color: Styles.mediumGrayColor, font: Styles.captionFont)
         checkBoxButton.layer.borderColor = habit.color.cgColor
         trackerLabel.text = "Счётчик: \(habit.trackDates.count)"
         

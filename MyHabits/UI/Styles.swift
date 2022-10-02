@@ -16,36 +16,19 @@ class Styles {
     static let greenColor: UIColor = UIColor(red: 29.0/255.0, green: 179.0/255.0, blue: 34.0/255.0, alpha: 1.0)
     static let purpleColor: UIColor = UIColor(red: 161.0/255.0, green: 22.0/255.0, blue: 204.0/255.0, alpha: 1.0)
     static let orangeColor: UIColor = UIColor(red: 255.0/255.0, green: 159.0/255.0, blue: 79.0/255.0, alpha: 1.0)
+    
+    static let title3Font: UIFont = UIFont.systemFont(ofSize: 20, weight: .semibold)
+    static let headlineFont: UIFont = UIFont.systemFont(ofSize: 17, weight: .semibold)
+    static let bodyFont: UIFont = UIFont.systemFont(ofSize: 17, weight: .regular)
+    static let footnoteFont: UIFont = UIFont.systemFont(ofSize: 13, weight: .semibold)
+    static let statusFootnoteFont: UIFont = UIFont.systemFont(ofSize: 13, weight: .regular)
+    static let captionFont: UIFont = UIFont.systemFont(ofSize: 12, weight: .regular)
 }
 
 extension UILabel {
-    func applyTitle3Style() {
-        self.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
-        self.textColor = .black
-    }
     
-    func applyHeadlineStyle() {
-        self.font = UIFont.systemFont(ofSize: 17, weight: .semibold)
-        self.textColor = Styles.blueColor
-    }
-    
-    func applyBodyStyle() {
-        self.font = UIFont.systemFont(ofSize: 17, weight: .regular)
-        self.textColor = .black
-    }
-    
-    func applyFootnoteStyle() {
-        self.font = UIFont.systemFont(ofSize: 13, weight: .semibold)
-        self.textColor = Styles.darkGrayColor
-    }
-    
-    func applyStatusFootnoteStyle() {
-        self.font = UIFont.systemFont(ofSize: 13, weight: .regular)
-        self.textColor = Styles.darkGrayColor
-    }
-    
-    func applyCaptionStyle() {
-        self.font = UIFont.systemFont(ofSize: 12, weight: .regular)
-        self.textColor = Styles.mediumGrayColor
+    func applyStyle(color: UIColor, font: UIFont) {
+        self.textColor = color
+        self.font = font
     }
 }

@@ -14,7 +14,7 @@ class ProgressCollectionViewCell: UICollectionViewCell {
     private lazy var nameLabel: UILabel = {
         let label = UILabel()
         label.text = "Всё получится!"
-        label.applyStatusFootnoteStyle()
+        label.applyStyle(color: Styles.darkGrayColor, font: Styles.statusFootnoteFont)
         
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -32,7 +32,7 @@ class ProgressCollectionViewCell: UICollectionViewCell {
     
     private lazy var statusLabel: UILabel = {
         let label = UILabel()
-        label.applyFootnoteStyle()
+        label.applyStyle(color: Styles.darkGrayColor, font: Styles.footnoteFont)
         label.text = String(Int(HabitsStore.shared.todayProgress * 100)) + "%"
         
         label.translatesAutoresizingMaskIntoConstraints = false

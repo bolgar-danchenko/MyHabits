@@ -5,6 +5,8 @@
 //  Created by Konstantin Bolgar-Danchenko on 16.08.2022.
 //
 
+import UIKit
+
 struct InfoData {
     
     static let headerText: String = "Привычка за 21 день"
@@ -24,4 +26,14 @@ struct InfoData {
     static let text6: String = "6. На 90-й день соблюдения техники все лишнее из «прошлой жизни» перестает напоминать о себе, и человек, оглянувшись назад, осознает себя полностью обновившимся."
     
     static let sourceText: String = "Источник: psychbook.ru"
+    
+    static func makeTextLabel(text: String, size: CGFloat, weight: UIFont.Weight) -> UILabel {
+        let label = UILabel()
+        label.text = text
+        label.font = size > 17 ? UIFont.boldSystemFont(ofSize: size): UIFont.systemFont(ofSize: size, weight: weight)
+        label.numberOfLines = 0
+        
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }
 }

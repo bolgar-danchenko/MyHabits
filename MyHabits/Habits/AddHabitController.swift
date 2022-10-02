@@ -82,7 +82,7 @@ class AddHabitController: UIViewController {
     private lazy var nameLabel: UILabel = {
         let label = UILabel()
         label.text = "НАЗВАНИЕ"
-        label.applyFootnoteStyle()
+        label.applyStyle(color: Styles.darkGrayColor, font: Styles.footnoteFont)
         label.numberOfLines = 1
         
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -139,7 +139,7 @@ class AddHabitController: UIViewController {
     private lazy var timeLabel: UILabel = {
         let label = UILabel()
         label.text = "ВРЕМЯ"
-        label.applyFootnoteStyle()
+        label.applyStyle(color: Styles.darkGrayColor, font: Styles.footnoteFont)
         
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
